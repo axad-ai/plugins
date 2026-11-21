@@ -1,0 +1,50 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "axad",
+  "version": "1.0.0",
+  "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
+  "author": {
+    "name": "Axad",
+    "email": "support@axad.ai",
+    "url": "https://axad.ai"
+  },
+  "homepage": "https://axad.ai/developers",
+  "repository": "https://github.com/axad-ai/plugins",
+  "keywords": [
+    "language-learning",
+    "tutor",
+    "flashcards",
+    "spaced-repetition",
+    "dutch",
+    "inburgering"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Axad",
+        "shortDescription": "Learn languages with Axad",
+        "longDescription": "Axad is an AI language tutor. This plugin connects your agent to Axad's remote MCP server and gives it Axad's teaching skills. Your own model is the tutor: it opens lessons from Axad's library, explains and corrects, saves flash cards to your bag, reviews them with spaced repetition and, where the host can show it, draws Axad's learning widgets. Speech and new drawings spend Axad credit; teaching does not. Many tools work before you sign in; saving cards and lessons need your Axad account. Axad is independent: not part of DUO or the Dutch government, and it gives no official exam result.",
+        "developerName": "Axad",
+        "category": "Education",
+        "capabilities": [
+          "Browse lessons",
+          "Save and review flash cards",
+          "Dutch inburgering practice",
+          "Hear words spoken"
+        ],
+        "websiteURL": "https://axad.ai",
+        "supportURL": "https://axad.ai/developers#support",
+        "privacyPolicyURL": "https://axad.ai/privacy",
+        "termsOfServiceURL": "https://axad.ai/terms",
+        "defaultPrompt": [
+          "Teach me Dutch for the inburgering A2 exam.",
+          "Review my Axad flash cards that are due.",
+          "Check this Dutch sentence and explain my mistakes."
+        ],
+        "brandColor": "#4E56D9",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      }
+    }
+  }
+}

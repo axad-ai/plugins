@@ -1,0 +1,20 @@
+{
+  "name": "axad",
+  "version": "1.0.0",
+  "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
+  "author": {
+    "name": "Axad",
+    "email": "support@axad.ai",
+    "url": "https://axad.ai"
+  },
+  "homepage": "https://axad.ai/developers",
+  "repository": "https://github.com/axad-ai/plugins",
+  "keywords": [
+    "language-learning",
+    "tutor",
+    "flashcards",
+    "spaced-repetition",
+    "dutch",
+    "inburgering"
+  ]
+}

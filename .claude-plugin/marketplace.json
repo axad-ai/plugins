@@ -1,0 +1,28 @@
+{
+  "name": "axad",
+  "description": "Axad, the AI language tutor, for Claude.",
+  "metadata": {
+    "description": "Axad, the AI language tutor, for Claude."
+  },
+  "owner": {
+    "name": "Axad",
+    "email": "support@axad.ai"
+  },
+  "plugins": [
+    {
+      "name": "axad",
+      "source": "./axad",
+      "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
+      "version": "1.0.0",
+      "category": "education",
+      "tags": [
+        "language-learning",
+        "tutor",
+        "flashcards",
+        "spaced-repetition",
+        "dutch",
+        "inburgering"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "axad": {
+      "type": "http",
+      "url": "https://mcp.axad.ai/mcp"
+    }
+  }
+}
