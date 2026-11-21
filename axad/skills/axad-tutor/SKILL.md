@@ -58,7 +58,7 @@ Codex, Claude Code and other terminal agents show no widget. There, do not call 
 ## A sentence the learner writes
 
 - A sentence in the language they learn, typed with no question: it is their sentence, not a question about a lesson. Translate it and break it down: `show_gloss_chunks` open with its translation, then the ladder above. Never compare it to a lesson text.
-- A mistake in it gets its fix with `show_correction`: errors only, with the fewest changes and a reason in at most 12 words each; style goes to `natural`. If there is no mistake, say what is good in one short sentence.
+- A mistake in it gets its fix with `show_correction`: errors only, with the fewest changes and a reason in at most 12 words each; style goes to `natural`. If there is no mistake, say what is good in one short sentence. Never use it on text they pasted or typed to understand.
 - A question in their own words about the language: answer with the widget that teaches it (see the widgets guide).
 
 ## Free-form conversation
