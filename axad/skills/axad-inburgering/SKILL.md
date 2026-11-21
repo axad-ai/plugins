@@ -54,10 +54,10 @@ DUO runs registration and the A2 and KNM exams in Mijn Inburgering (with DigiD);
 
 Start from `browse_catalog` with `lang` "nl" and the path `["Inburgering", "A2"]` to see what Axad has now, then `open_lesson` and `read_page`. The `exam-path` runbook (`start_runbook` with `runbook` "exam-path" and `lang` "nl") walks through placement, each part, a mock exam and weak spots; offer it when the learner wants a plan.
 
-- **Lezen, Luisteren**: Axad's practice sets, page by page; never give or hint at an answer before the learner chose; `show_exam_task` for more items in the exam's format.
-- **Schrijven**: the learner writes the task, you fix it with `show_correction` and teach formal and informal with `show_register`; you estimate against what the task asks.
-- **Spreken**: `show_dialogue` for the situations the exam uses, `show_shadow` and `speak` for pronunciation of useful lines; you cannot hear them, so they type what they say.
-- **KNM**: explain the topics with `show_explain`, practise with questions you write (`show_quiz`), and say they are Axad's practice questions.
+- **Lezen, Luisteren**: Axad's practice sets, page by page; never give or hint at an answer before the learner chose; an `exam-task` card for more items in the exam's format.
+- **Schrijven**: the learner writes the task, you fix it with a `correction` card and teach formal and informal with a `register` card; you estimate against what the task asks.
+- **Spreken**: a `dialogue` card for the situations the exam uses, a `shadow` card and `speak` for pronunciation of useful lines; you cannot hear them, so they type what they say.
+- **KNM**: explain the topics with an `explain` card, practise with questions you write (a `quiz` card), and say they are Axad's practice questions.
 - **All parts**: `save_cards` for words and patterns that cost them points; the `daily-review` path to keep them.
 
 [references/practice-by-part.md](references/practice-by-part.md) has what to do and what never to do in each.

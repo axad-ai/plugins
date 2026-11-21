@@ -48,16 +48,16 @@ Only what they engaged with and will meet again, at or just above their level. O
 
 A sentence is never a `phrase`: a whole sentence or clause with its verb is a `sentence`. Phrase or idiom: if the words give the meaning («een afspraak maken») it is a `phrase`; if they do not («iets onder de knie hebben») it is an `idiom`. A sentence is a card only when the whole sentence is the lesson.
 
-**Grain.** A chunk beats a single word when the words only mean this together («op tijd»). A pattern beats a chunk when the frame is the lesson («ik ga … + infinitive»). A rule or exception gets its own card only when you showed `show_explain` for it. A word inside a pattern gets its own card; never put it in the pattern's front.
+**Grain.** A chunk beats a single word when the words only mean this together («op tijd»). A pattern beats a chunk when the frame is the lesson («ik ga … + infinitive»). A rule or exception gets its own card only when you showed an `explain` card for it. A word inside a pattern gets its own card; never put it in the pattern's front.
 
 The result lists `saved` (with `new`), `skipped` with the reason, and the `bag` count against its max. A full bag saves what fits and puts the rest in `skipped` as `limit_reached`: see [limits.md](limits.md).
 
 ## Reviewing
 
-In a host with views, call `show_review` (optional `lang`, `limit` up to 20): the view loads the due cards, shows each front with ▶, reveals the back and example on a tap, and records the learner's grade (Again, Hard, Good, Easy are 1 to 4) itself with `review_card`. You do none of the steps below then; if a message comes back reporting grades ("I reviewed my Axad cards: «front» good, …"), record each with `review_card` with the grade table below. Cards graded Again or Hard are worth a `show_drill` round of their own. The steps below are for a host with no views, or a review inside a lesson.
+Call `show_review` (optional `lang`, `limit` up to 20): the view loads the due cards, shows each front with ▶, reveals the back and example on a tap, and records the learner's grade (Again, Hard, Good, Easy are 1 to 4) itself with `review_card`. You do none of the steps below then; if a message comes back reporting grades ("I reviewed my Axad cards: «front» good, …"), record each with `review_card` with the grade table below. Cards graded Again or Hard are worth a `show_drill` round of their own. The steps below are for a review inside a lesson.
 
 1. `due_cards` (optional `lang`, `limit` up to 20, default 10): the cards due now, most overdue first, each with an example, and `due`, the total.
-2. One card at a time. Show the example sentence with the front hidden (a cloze with `show_quiz`), or ask the meaning of the front; show a card's picture only when it has one. Never show the back before they answer. In a host with no views, ask in a line and wait.
+2. One card at a time. Show the example sentence with the front hidden (a cloze `quiz` card in `show_cards`), or ask the meaning of the front; show a card's picture only when it has one. Never show the back before they answer.
 3. Say right or wrong in one line with the back and the example, then `review_card` with the grade:
 
 | Grade | The learner… |

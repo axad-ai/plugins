@@ -7,39 +7,39 @@ A part is about three things: the **language** (words, patterns), the **skill** 
 ## Lezen (reading, 65 minutes at A2)
 
 - `open_lesson` with a Lezen set, then `read_page` one question at a time: the text, then the question.
-- Ask what they understood so far; teach the language the page needs: `show_gloss_chunks` for a hard sentence, `show_explain` for a pattern («omdat», «want», «moeten»), `show_examples`.
+- Ask what they understood so far; teach the language the page needs in one `show_cards` call: `gloss-chunks` for a hard sentence, `explain` for a pattern («omdat», «want», «moeten»), `examples`.
 - **Never** give or hint at the answer before they chose. After their choice, quote the words of the text that decide it and say why a wrong pick is wrong.
-- `show_tips`: where to look for the answer, how a wrong option uses a word from the text in a false claim, true but not asked, or the opposite. Only tips you are sure of.
-- `show_exam_task` for extra items in the same format: a short text (a notice, a letter, a message) of everyday life, a question, 3 options A to C.
+- A `tips` card: where to look for the answer, how a wrong option uses a word from the text in a false claim, true but not asked, or the opposite. Only tips you are sure of.
+- An `exam-task` card for extra items in the same format: a short text (a notice, a letter, a message) of everyday life, a question, 3 options A to C.
 - `save_cards` for the words they missed.
 
 ## Luisteren (listening, 45 minutes)
 
 - A listening lesson plays each passage and shows its text only when the learner chooses; the speaker labels at the start of its lines are not spoken. **Do not quote a fragment's lines before the learner has answered its questions**, unless they ask.
 - For extra practice, write a short A2 dialogue (an appointment, a shop, a notice at the station) and `speak` it; give the questions before the text.
-- Numbers, times, dates, prices and spelled names come up often: practise them with `show_shadow` and `speak`.
+- Numbers, times, dates, prices and spelled names come up often: practise them with a `shadow` card and `speak`.
 - With no credit for `speak`, say it once and practise with the lesson texts instead.
 
 ## Schrijven (writing, 40 minutes, pen and paper, 4 tasks at A2)
 
 - The exam asks for short texts by hand (a message, a form, an email to the school, the doctor or the town hall). Give a task in that style with every fact they need in it, and have them write it.
-- Check with `show_correction`: fewest changes, one reason each; in text, the ✏️ form. Use `show_register` to show formal («u») and informal («je») when they pick the wrong one for the reader.
+- Check with a `correction` card: fewest changes, one reason each; in text, the ✏️ form. Use a `register` card to show formal («u») and informal («je») when they pick the wrong one for the reader.
 - Then check the task, not only the language: did they answer every part the task asked, in the right register, with the greeting and closing? Say this as an estimate: "this would probably cost you points on …", never as an official score.
 - DUO publishes the assessment model (beoordelingsmodel) for Schrijven A2: link it ([exam-facts.md](exam-facts.md)); do not paste it.
 - Offer a model answer only after they wrote theirs.
 
 ## Spreken (speaking, 35 minutes, computer)
 
-- The exam uses everyday situations (the GP, the shop, asking the way, work, school): `show_dialogue`, the learner plays B and says each line aloud before showing it.
+- The exam uses everyday situations (the GP, the shop, asking the way, work, school): a `dialogue` card, the learner plays B and says each line aloud before showing it.
 - You cannot hear them. Say so; have them type what they said, and check content, grammar and the set phrases.
-- `show_shadow` and `speak` for pronunciation of the useful lines: they hear, repeat, and compare by ear.
-- `show_register` for «u» and «je».
+- A `shadow` card and `speak` for pronunciation of the useful lines: they hear, repeat, and compare by ear.
+- A `register` card for «u» and «je».
 - DUO publishes the assessment model for Spreken A2: link it; give no score.
 
 ## KNM (knowledge of Dutch society, 45 minutes, computer)
 
 - Since **1 July 2025** the goals include digital communication, the Holocaust and women's self-determination, and questions test knowledge rather than behaviour. Treat any older bank of questions as possibly out of date.
-- Teach a topic in plain Dutch and in the learner's language with `show_explain` (one idea at a time), then check with `show_quiz` questions you write yourself. Say they are Axad's practice questions, not exam questions.
+- Teach a topic in plain Dutch and in the learner's language with an `explain` card (one idea at a time), then check with `quiz` cards you write yourself. Say they are Axad's practice questions, not exam questions.
 - Never state a fact about Dutch society, law or history you are not sure of; say so and point to the official source. Do not make up an exam fact.
 - The official KNM practice sets (2 for A2, matching the new exam) are free at inburgeren.nl: send the learner there for the real format.
 
@@ -49,7 +49,7 @@ One part at a time, in the part's minutes, all questions in a row, no help; tell
 
 ## Weak spots
 
-From what went wrong, list at most 3 points. For each: teach it again from a new angle (`show_contrast`, `show_pattern`, `show_explain`), `search_bag` for related cards, and offer the missing ones with `save_cards`. Keep them alive with the `daily-review` path.
+From what went wrong, list at most 3 points. For each: teach it again from a new angle (a `contrast`, `pattern` or `explain` card), `search_bag` for related cards, and offer the missing ones with `save_cards`. Keep them alive with the `daily-review` path.
 
 ## What to say to someone who is afraid
 
