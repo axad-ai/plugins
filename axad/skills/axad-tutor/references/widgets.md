@@ -12,6 +12,7 @@ Every widget also takes `fold: true`: a secondary widget of this reply, shown as
 | asks about one word or chunk | `gloss-chunks` or `explain` (with its other meanings) | `examples`, `quiz`, `tips`, `picture` |
 | asks why one form and not another | `contrast` | `examples`, `quiz` |
 | asks where the words go, or why the verb is there | `sentence-frame` | `explain`, `pattern` |
+| asks how a sentence is built, or what a part of it is | `structure` | `explain`, `sentence-frame` |
 | asks for a word's forms | `forms` | `examples`, `quiz` |
 | writes text in the language | `correction` | `alternatives`, `explain` |
 | asks how to say it politely or casually | `register` | `alternatives`, `examples` |
@@ -24,11 +25,11 @@ Every widget also takes `fold: true`: a secondary widget of this reply, shown as
 | asks for a reusable frame | `pattern` | `examples`, `quiz` |
 | asks for something none of these shows | `custom` | |
 
-Every reply may end with `next` (tertiary asks).
+Every widget call may carry `next`, the tertiary asks as 2 or 3 taps (see `next` below). `home`, `review` and `drill`, at the end, are the tap widgets of hosts with views.
 
 ## gloss-chunks
 
-**Helps when** the learner wants to see how a span is built: what each word means, which words go together, which parts belong together across the sentence. The usual main widget for a sentence they typed or selected, with its translation.
+**Helps when** the learner wants to see a span piece by piece: what each word means, which words go together, which parts belong together across the sentence. The meaning, not the grammar roles (`structure`). The usual main widget for a sentence they typed or selected, with its translation.
 
 **Write** the span copied exactly; each chunk is what a native speaker says as one piece (1 to 4 words); word glosses are literal and short (broken English is right); link the parts of one unit that stand apart (Dutch «bel … op») and name the whole form and its kind. `image` only on a chunk that is a concrete thing, action or place.
 
@@ -242,6 +243,21 @@ Listen to the two lines, then answer:
 The finite verb is second; the infinitive goes to the end.
 ```
 
+## structure
+
+**Helps when** how a sentence is built is the lesson: a verb before the subject, a subclause with the verb last, a split verb, a long sentence of several clauses, or the learner asks why a word stands where it does or what a part is. Not for every sentence and never for a short simple one. Usually secondary (folded) beside the main widgets; open when the learner asks about structure. Not `gloss-chunks` (the meaning piece by piece) and not `sentence-frame` (only the places of word order).
+
+**Write** each clause in the order it begins, with its kind in a few words; its parts in sentence order, each with its role as the support language's school grammar names it and its word class as one fixed English id (`class`); every word in exactly one part; a split verb is two parts; the one rule in `note`.
+
+**In text:** one line per clause: its kind, then each part with its role.
+
+```markdown
+«Ik weet dat hij morgen komt.» — *I know that he is coming tomorrow.*
+
+Main clause: Ik (subject) · weet (finite verb)
+Subclause, verb at the end: dat (conjunction) · hij (subject) · morgen (adverbial of time) · komt (finite verb)
+```
+
 ## register
 
 **Helps when** the learner asks how to say a message politely or casually, whether to use «u» or «je», or must write or say it to an official, a stranger or a friend.
@@ -310,7 +326,7 @@ The finite verb is second; the infinitive goes to the end.
 
 ## next
 
-**Helps when** a reply could go on: 1 to 6 one-click next steps, the asks that would help but were not made in this reply, and the next text to digest. The tertiary level of the ladder. Skip after a closed question.
+**Helps when** a reply could go on: one-click next steps, the asks that would help but were not made in this reply, and the next text to digest. The tertiary level of the ladder. Every widget call carries them as its `next` input (2 or 3 taps, each `label` at most 32 characters, each `ask` at most 300); the `next` widget below holds up to 6 more. Skip after a closed question.
 
 **Write** each item as `{ "label": "Quiz me", "ask": "Quiz me on «op tijd»" }`: a label of 2 to 4 words and the whole request in the learner's words, about this reply's topic; point at lesson sentences they have not touched yet when there are some.
 
@@ -319,6 +335,26 @@ The finite verb is second; the infinitive goes to the end.
 ```markdown
 Next: **Quiz me** · **More examples** · **Say it formally**
 ```
+
+## home
+
+**Helps when** the learner starts with no clear request, asks for the menu or seems unsure what to do. It is a list of taps: go on with the open lesson, start a lesson, paste a sentence, inburgering practice, review cards, the bag. Signed in, it names the cards due and the open lesson itself; signed out it works too. Only the optional `lang` (default "nl") is yours to give.
+
+**In text:** the numbered menu of [text-fallback.md](text-fallback.md), five choices.
+
+## review
+
+**Helps when** the learner wants to review their cards. The view loads their due cards (most overdue first), shows the front, reveals the back and example on a tap, takes a grade by tap (Again, Hard, Good, Easy) and records it with no turn of yours. Needs the learner's account. Optional `lang`, `limit` (1 to 20, default 10).
+
+**In text:** ask each card in a line, wait, say right or wrong with the back, then record the grade: [cards.md](cards.md).
+
+## drill
+
+**Helps when** the learner wants a round of practice on what they just learned: 5 to 8 questions answered by tap, one at a time, with a score and taps to go again, drill what they missed, make it harder, or return to the menu.
+
+**Write** `title` (a few words), `lang`, and 5 to 8 `items`, each the props of a `quiz` (choice, cloze, order or translate): test only what this conversation taught, wrong options are real mistakes, a choice's `answer` is the 0-based index as a number. When the learner taps "Drill what I missed" the message names the missed items: make a new round of just those, or of their neighbours.
+
+**In text:** number the questions and ask them one at a time, as `quiz` does.
 
 ## Rules that fit one widget
 
@@ -337,6 +373,7 @@ Props the schemas leave open; they hold in every host.
 - **picture:** nominate the picture of `say` in the same message and write its concept in `image`: the widget shows at once and the picture fills in when drawn. `say` is the language element, copied as the learner met it.
 - **dialogue:** use the set phrases of the situation (greetings, asking, thanking, closing). A B line answers the A line before it and needs nothing its cue does not say: no invented names, dates or numbers the learner cannot know; give those in `situation`. A B cue says what to say, not how: "Say you'd like an appointment." Take chunks from this chat's material and the bag when they fit. The app hides each B line behind "Show" with its `mean` as the cue.
 - **sentence-frame:** slots in sentence order; their `words` joined are `say` without its punctuation. Use the slots the language's school grammar names (subject · verb 1 · middle · verb 2), or for a free order the slots this sentence fills. Keep a slot empty in this sentence only when its place is the lesson (verb 2 with no second verb). `verb` marks only verb places: the finite verb, the infinitive or participle, a split verb's particle. `note` names the rule in plain words.
+- **structure:** every word of `say`, without punctuation, is in exactly one part of one clause; clauses in the order their first word stands, a subclause inside a main clause its own clause; a clause's parts in sentence order; a part split across the sentence («heb … gebeld») is two parts, each with its own role. `role` and `kind` use the school grammar the support language teaches; `class` is one fixed English id (verb, noun, pronoun, adjective, adverb, preposition, conjunction, article, numeral), whatever the support language, never shown.
 - **register:** `marks` are exact substrings of their `say`, in order, each once; leave out words both sides share. `formal` is for a town hall, a school, a doctor; `informal` for a friend, a neighbour, a known colleague. `note` says who gets which, with a word from the message.
 - **exam-task:** copy the exam's format: its kind of text, question style and number of options (a reading part: a short real text, a question in the exam's language, 3 options A–C). The text is new, at the exam's level, 40 to 120 words, from its daily settings; use the learner's material and bag when they fit. The props carry the answer (practice): the view checks the pick, shows the feedback and records it with no turn. When the learner taps "Explain more" or "Dig deeper", show the words in the text that decide it, and on a wrong pick save a `hard` card. `seconds` is the exam's own pace (reading: about 90 per item); the view counts down and does not stop the learner.
 - **scene:** nominate the scene with the scene as `concept` and every word of `words` drawn in the `prompt`; a library picture is used only when it truly shows the scene and every word. 3 to 6 words the picture shows, most useful first, nouns with their article, an action as the learner says it («wachten»). The view lists the words beside the picture, so choose words the learner finds without a pointer. One scene per place or situation; a scene and single-word pictures can share a reply.

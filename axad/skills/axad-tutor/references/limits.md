@@ -23,7 +23,7 @@ Axad's plans cap two things: the cards in the learner's bag, and their active le
 
 ## Gift codes
 
-If the learner has a gift code, `redeem_gift` with `code`: its credit is added at once. The errors are the same as on axad.ai; say in plain words what went wrong and do not guess a code.
+If the learner has a gift code, `redeem_gift` with `code`: what it gives is added at once (credit, more cards, more open practices); the result says which. The errors are the same as on axad.ai; say in plain words what went wrong and do not guess a code.
 
 ## Signed out
 

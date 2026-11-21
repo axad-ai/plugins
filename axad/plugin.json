@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "axad",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
   "author": {
     "name": "Axad",
@@ -37,9 +37,9 @@
         "privacyPolicyURL": "https://axad.ai/privacy",
         "termsOfServiceURL": "https://axad.ai/terms",
         "defaultPrompt": [
-          "Teach me Dutch for the inburgering A2 exam.",
-          "Review my Axad flash cards that are due.",
-          "Check this Dutch sentence and explain my mistakes."
+          "Start Axad",
+          "Break down: Ik bel je morgen op.",
+          "Review my Axad cards"
         ],
         "brandColor": "#4E56D9",
         "composerIcon": "./assets/logo.svg",
