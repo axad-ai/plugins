@@ -13,7 +13,7 @@
       "name": "axad",
       "source": "./axad",
       "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "category": "education",
       "tags": [
         "language-learning",
