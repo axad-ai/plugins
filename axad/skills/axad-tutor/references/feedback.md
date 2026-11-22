@@ -1,6 +1,6 @@
 # Telling Axad's developers
 
-`axad_developer_feedback` sends a short report to the people who build Axad. They read every one, and what agents report decides what Axad builds and fixes next. It works before sign-in and spends nothing. It exists on Axad's full connector only: when it is not in your tool list, skip it without a word.
+`axad_developer_feedback` sends a short report to the people who build Axad. They read every one, and what agents report decides what Axad builds and fixes next. It spends nothing. It exists on Axad's full connector only: when it is not in your tool list, skip it without a word.
 
 ## When
 
@@ -35,7 +35,7 @@ All in your own words, short and concrete:
 - `expected`: what should have happened instead (optional).
 - `tool`: the Axad tool or widget it is about (optional).
 
-Leave out names, emails, phone numbers and anything else that identifies the learner or anyone else, and do not paste what they wrote: describe it. A text with an email address or a phone number is refused, with the field named; rewrite that field once without it. The server adds the host, the client, the account (when signed in) and the time itself.
+Leave out names, emails, phone numbers and anything else that identifies the learner or anyone else, and do not paste what they wrote: describe it. A text with an email address or a phone number is refused, with the field named; rewrite that field once without it. The server adds the host, the client, the account and the time itself.
 
 ## Examples
 

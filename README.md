@@ -2,7 +2,7 @@
 
 Axad is an AI language tutor. This folder is the Axad plugin for the agents that show Axad's widgets, with their taps: **Claude** (web, desktop and mobile), **ChatGPT**, and **Codex in the ChatGPT desktop app**. Each bundles:
 
-- the remote MCP server `https://mcp.axad.ai/mcp` (OAuth 2.1; many tools work before you sign in),
+- the remote MCP server `https://mcp.axad.ai/mcp` (OAuth 2.1; you sign in when you add it),
 - Axad's teaching skills (`axad-tutor`, `axad-inburgering`).
 
 In these hosts Axad answers as its own app does: one stack of cards per reply (the `show_cards` tool), some open, a few folded, with next-step buttons, and a popup on selected text.
@@ -19,7 +19,7 @@ Codex in the ChatGPT desktop app: add the marketplace `axad-ai/plugins` in Plugi
 
 ChatGPT on the web: Plugins → Add custom MCP server → `https://mcp.axad.ai/mcp`.
 
-The first call of a tool that needs your account asks you to sign in once.
+Adding Axad asks you to sign in once; your cards and lessons then follow you to every host.
 
 ## Layout
 

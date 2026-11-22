@@ -112,7 +112,7 @@ Read it as the ladder: two open cards, three folded, four next taps, no prose ar
 | asks for a reusable frame | `pattern` | `examples`, `quiz` |
 | asks for something none of these shows | `custom` | |
 
-The call's `next` holds the tertiary asks, up to 5 taps (see `next` below). `home`, `review` and `drill`, at the end, are the tap widgets of hosts with views: their own tools (`show_home`, `show_review`, `show_drill`), not cards.
+The call's `next` holds the tertiary asks, up to 5 taps (see `next` below). `home`, `practice` and `drill`, at the end, are the tap widgets of hosts with views: their own tools (`show_home`, `show_practice`, `show_drill`), not cards.
 
 ## gloss-chunks
 
@@ -246,11 +246,11 @@ The view checks the pick and shows the explanation itself: do not print the answ
 
 ## home
 
-**Helps when** the learner starts with no clear request, asks for the menu or seems unsure what to do. It is a list of taps: go on with the open lesson, start a lesson, paste a sentence, inburgering practice, review cards, the bag. Signed in, it names the cards due and the open lesson itself; signed out it works too. Only the optional `lang` (default "nl") is yours to give.
+**Helps when** the learner starts with no clear request, asks for the menu or seems unsure what to do. It is a list of taps: go on with the open lesson, start a lesson, paste a sentence, inburgering practice, review cards, the bag. It names the cards due and the open lesson itself. Only the optional `lang` (default "nl") is yours to give.
 
-## review
+## practice
 
-**Helps when** the learner wants to review their cards. The view loads their due cards (most overdue first), shows the front, reveals the back and example on a tap, takes a grade by tap (Again, Hard, Good, Easy) and records it with no turn of yours. Needs the learner's account. Optional `lang`, `limit` (1 to 20, default 10).
+**Helps when** the learner wants to review or practise their cards. The view runs one exercise at a time (pick the meaning, pick what was heard, fill a gap, put chunks in order), checks each tap and records it with no turn of yours, and ends with the score and Again. Needs the learner's account. Optional `lang`, `materials`, `kinds`, `due`, `minutes`.
 
 ## drill
 
@@ -269,7 +269,7 @@ Props the schemas leave open; they hold in every host.
 - **pattern:** the number of `slots` equals the number of `___` in `frame`.
 - **forms:** show a word whose form changes as it appears in sentences, and one whose parts split (Spanish «vuelvo», «he vuelto»).
 - **correction:** also for a talk they asked for. Never for text they pasted or typed to understand. The view draws the word diff from `wrote` and `fixed`; `fixes` give the reasons.
-- **quiz:** the `answer` of a choice is the 0-based index of the right option as a number (`0`, not `"0"`, `"A"` or the text). The view checks choice, cloze and order and shows the result at once, in place, then `explain`; every answer is recorded with no tutor reply, and a quiz is answered once. Translate is free text: `correct` is null and `answer` is one model answer, shown with `explain` after the learner's answer.
+- **quiz:** the `answer` of a choice is the 0-based index of the right option as a number (`0`, not `"0"`, `"A"` or the text). A question about a gap, a blank or a sentence carries that sentence, with ___ for a missing word, in `prompt` (choice or cloze); `ask` only says what to do ("Which word fits?"). The view checks choice, cloze and order and shows the result at once, in place, then `explain`; every answer is recorded with no tutor reply, and a quiz is answered once. Translate is free text: `correct` is null and `answer` is one model answer, shown with `explain` after the learner's answer.
 - **shadow:** the view plays each line, waits about 1.5 × its length for the learner to repeat, then plays the next.
 - **voice:** for a dialogue give each line its `by` and let the speakers take turns. Leave `transcript` out for listening practice; set `"shown"` only when there is nothing to find out by ear or the lines are to be said after the voice. Exam style: `plays` as the exam gives it (listening part: 2), one `question` the sound alone answers; showing the transcript or answering ends the limit. Shadowing: `shadow: true`, `speed: 0.75` for new lines, at most 8 words each, short to long, `transcript: "shown"`. Lines to say after the voice and nothing else: use `shadow`; a role-play the learner takes a part in: `dialogue`. Give `mean` on every line so each can be saved once the transcript shows. One voice widget per reply. The view checks the pick and shows the transcript; run again only for the learner's next ask (harder, slower, why an answer was wrong).
 - **picture:** nominate the picture of `say` in the same message and write its concept in `image`: the widget shows at once and the picture fills in when drawn. `say` is the language element, copied as the learner met it.

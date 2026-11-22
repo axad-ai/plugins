@@ -4,6 +4,8 @@ Axad's plans cap two things: the cards in the learner's bag, and their active le
 
 `get_account` shows the plan, its limits and what the learner uses of them, and their credit. Call it when they ask about their plan or credit, or after a limit. It is not a step of teaching: do not call it to check before you save.
 
+Say credit in tutor turns (`credit.tutor_turns`), never as money.
+
 ## When a tool says no
 
 | Answer | Meaning | What you do |
@@ -11,7 +13,7 @@ Axad's plans cap two things: the cards in the learner's bag, and their active le
 | `limit_reached` from `save_cards` | the bag is full (`limit` "bag", `max`, `count`) | The cards that fit were saved; the rest are in `skipped`. Say what is full, once. Go on teaching and reviewing. |
 | `limit_reached` from `open_lesson` | the active lessons are full (`limit` "lessons") | Say it once, and offer to `close_lesson` a lesson they finished or set aside (ask which): it keeps its place and cards and frees the slot. Meanwhile teach from the text or lesson the learner gave you, which needs no open lesson. |
 | `allowance_spent` from `speak` or `nominate_image` | no credit left for speech or a new drawing | Say it once. Go on with text, and leave the picture out. |
-| `sign_in` (HTTP 401 before sign-in) | a tool needs the account | The host asks the learner to sign in; say in one line why. |
+| `sign_in` (HTTP 401) | the learner's sign-in ended or was revoked | The host asks the learner to sign in again; say in one line why. |
 
 ## Say it once, never push
 
@@ -25,6 +27,6 @@ Axad's plans cap two things: the cards in the learner's bag, and their active le
 
 If the learner has a gift code, `redeem_gift` with `code`: what it gives is added at once (credit, more cards, more open practices); the result says which. The errors are the same as on axad.ai; say in plain words what went wrong and do not guess a code.
 
-## Signed out
+## Sign-in
 
-Before sign-in the learner can browse the catalog, see the paths, try every `show_` tool and find pictures. Saving cards, opening lessons, reviews and paths need the account: when the host asks them to sign in, it is once, and their cards and places then follow them to every host and the Mac app.
+The learner signs in when they add Axad to their host, so every tool works at once: they can browse the catalog, open lessons, save cards and review them, and their cards and places follow them to every host and the Mac app. If a call still needs a new sign-in (it ended or was revoked), the host asks them once.

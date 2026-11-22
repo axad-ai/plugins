@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "axad",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Axad's language tutor inside your own agent: lessons, flash cards with spaced review, learning widgets, voice and pictures, and Dutch inburgering exam practice.",
   "author": {
     "name": "Axad",
@@ -23,7 +23,7 @@
       "interface": {
         "displayName": "Axad",
         "shortDescription": "Learn languages with Axad",
-        "longDescription": "Axad is an AI language tutor. This plugin connects your agent to Axad's remote MCP server and gives it Axad's teaching skills. Your own model is the tutor: it opens lessons from Axad's library, explains and corrects, saves flash cards to your bag, reviews them with spaced repetition and draws Axad's learning widgets. Speech and new drawings spend Axad credit; teaching does not. Many tools work before you sign in; saving cards and lessons need your Axad account. Axad is independent: not part of DUO or the Dutch government, and it gives no official exam result.",
+        "longDescription": "Axad is an AI language tutor. This plugin connects your agent to Axad's remote MCP server and gives it Axad's teaching skills. Your own model is the tutor: it opens lessons from Axad's library, explains and corrects, saves flash cards to your bag, reviews them with spaced repetition and draws Axad's learning widgets. Speech and new drawings spend Axad credit; teaching does not. You sign in with your Axad account when you add it; your cards and lessons follow you. Axad is independent: not part of DUO or the Dutch government, and it gives no official exam result.",
         "developerName": "Axad",
         "category": "Education",
         "capabilities": [

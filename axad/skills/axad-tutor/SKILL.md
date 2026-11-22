@@ -34,12 +34,12 @@ Axad leads: the learner should never have to know a feature or think of what to 
 | pastes a text, an email, a letter | `open_lesson` with `text` (and `title`, `lang`). It counts as one of their active lessons. |
 | wants to go on with something | `list_lessons`, then `open_lesson` with `material`. |
 | wants a routine, a plan or an exam path | `list_runbooks`, then `start_runbook` and follow it (see below). |
-| wants to review | `show_review`: one card at a time, graded by tap in the view. Or the `daily-review` path. |
+| wants to review or practise their cards | `show_practice`: one exercise at a time, answered by tap in the view. Or the `daily-review` path. |
 | wants to practise what they just learned | `show_drill` with 5 to 8 items, each the props of a quiz (see "Practice"). |
 
 `open_lesson` returns the page text (or the first 40 sentences) and starter ideas: pick what fits, then teach from the text with cards. A lesson with pages (a practice exam: one question and its text a page) goes on with `read_page`, which keeps the learner's place. `close_lesson` when they finish or set it aside: it keeps cards, chats and place, and frees an active lesson.
 
-Before sign-in, `browse_catalog`, `list_runbooks`, `find_images`, `upgrade_link`, `show_cards` and `show_home` work. The first tool that needs the account makes the host ask the learner to sign in once; tell them in one line why when it happens.
+The learner signed in to Axad when they added it, so every tool works from the first call. If a tool still answers that the learner must sign in (their sign-in ended), the host asks them once; tell them in one line why.
 
 ## The card ladder
 
@@ -73,11 +73,11 @@ Save only what they engaged with and will meet again, at or just above their lev
 
 ## Reviews
 
-`show_review` runs a review inside the view: it loads the due cards, shows one at a time (front, then the answer on a tap), grades by tap and records each grade itself. Do not quiz the cards yourself then. If the learner's message reports grades ("I reviewed my Axad cards: «front» good, …"), record each with `review_card`. See [references/cards.md](references/cards.md).
+`show_practice` runs a practice of the learner's cards inside the view (optional `lang`, `materials`, `kinds`, `due`, `minutes`): one exercise at a time, answered by tap, each answer checked and recorded by the view itself. Do not quiz the cards yourself then. If the learner answers in the chat instead, pass the answer to `answer_exercise`, then show the next with `next_exercise`. After the run, write 2 to 4 sentence exercises with `write_exercises` for each card in the result's `wants`. See [references/cards.md](references/cards.md).
 
 ## Practice
 
-`show_drill` gives a round of 5 to 8 quick questions the learner answers by tapping (choice, cloze, order, translate), with a score at the end. Build the items from what this conversation taught: every item is the props of a `quiz` card, wrong options are real mistakes, and a choice's `answer` is the 0-based index. The view checks every answer; do not repeat them. When the learner taps "Drill what I missed", drill the missed items again in a new round.
+`show_drill` gives a round of 5 to 8 quick questions the learner answers by tapping (choice, cloze, order, translate), with a score at the end. Build the items from what this conversation taught: every item is the props of a `quiz` card, wrong options are real mistakes, and a choice's `answer` is the 0-based index. An item about a gap or a sentence carries that sentence, with ___, in `prompt`; `ask` only says what to do. The view checks every answer; do not repeat them. When the learner taps "Drill what I missed", drill the missed items again in a new round.
 
 ## Voice and pictures
 

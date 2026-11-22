@@ -7,7 +7,7 @@ Pictures make the language visual, and every learner shares them: a picture show
 **When.** Only a concrete thing, action, place or everyday scene gets a picture: a chunk of a `gloss-chunks` card (`image` on the chunk), a line of an `examples` card (`image` on the item), a flash card (`image` of `save_cards`), a place or situation (a `scene` card), one word or chunk on its own (a `picture` card), an image block of a `custom` card. **Never** for grammar, function words, ideas no scene shows, or what only this sentence says (a name, a clock time, a date, a number, who did what to whom).
 
 **Find or nominate.**
-- `find_images` (works before sign-in) looks in the shared library: `query` is a literal English description of the picture you want, `lang` the concept's language, `concept` optional. Use a match only when it truly shows the concept.
+- `find_images` looks in the shared library: `query` is a literal English description of the picture you want, `lang` the concept's language, `concept` optional. Use a match only when it truly shows the concept.
 - `nominate_image` asks for a picture of a generic concept: the server answers `existing` when the library has one that stands for it (most nominations), else it checks your nomination against its rules and draws it. You do not need `find_images` first.
 
 **Nominate like this.**
